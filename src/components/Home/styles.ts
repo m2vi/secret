@@ -1,35 +1,33 @@
-import styled, { keyframes } from 'styled-components'
-
-const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-`
+import styled from 'styled-components';
 
 export const Container = styled.main`
   height: 100vh;
-  padding: 25px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
+`;
 
-  button {
-    margin-top: 24px;
+export const Input = styled.input`
+  width: 100%;
+  padding: 10px 20px 10px 20px;
+  border-radius: 8px;
+  color: var(--color-primary-100);
+  font-size: 14px;
+  background-color: var(--color-primary-700);
+  outline: 0;
+  border: 0;
+  max-width: 240px;
+  border-end-end-radius: 0;
+  border-start-end-radius: 0;
+  height: calc(40px - (10px * 2));
+
+  ::placeholder {
+    color: var(--color-primary-300);
   }
-`
+`;
 
-export const Image = styled.img`
-  width: 240px;
-  animation: ${rotate} 15s linear infinite;
-`
-
-export const Text = styled.p`
-  margin-top: 24px;
-  font-size: 18px;
-
-  text-align: center;
-`
+export const SwapButton = styled.button`
+  border-radius: 8px;
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+  background-color: var(--color-primary-700);
+`;

@@ -1,17 +1,13 @@
-import { Container, Image, Text } from './styles';
-import React from 'react'
+import { Container, Input } from './styles';
 
-export const Home: React.FC = () => {
+import { useState, FC } from 'react';
+
+export const Home: FC = () => {
+  const [type, setType] = useState('password');
+
   return (
     <Container>
-      <h1>Electron, React and TypeScript Template</h1>
-      <Image
-        src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg"
-        alt="ReactJS logo"
-      />
-      <Text>Edit <code>src/App.tsx</code> and save to reload.</Text>
-      <Text>You can use Bootstrap, Styled Components or pure CSS to beautify your app :)</Text>
+      <Input placeholder='Password' type={type} />
     </Container>
-  )
-}
-
+  );
+};

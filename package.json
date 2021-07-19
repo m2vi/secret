@@ -1,8 +1,8 @@
 {
-  "name": "electron-template",
-  "author": "Eliel <https://github.com/griffan113>",
-  "version": "1.0.0",
-  "description": "TS + React + Electron template",
+  "name": "secret",
+  "author": "m2vi",
+  "version": "0.0.0",
+  "description": "",
   "main": "./.webpack/main/index.js",
   "scripts": {
     "dev": "electron-forge start",
@@ -16,6 +16,7 @@
   "keywords": [],
   "license": "MIT",
   "dependencies": {
+    "@types/react-icons": "^3.0.0",
     "bootstrap": "4.5.2",
     "file-loader": "^6.2.0",
     "react": "17.0.2",
@@ -69,8 +70,8 @@
   "config": {
     "forge": {
       "packagerConfig": {
-        "name": "Electron Template",
-        "executableName": "electron-template",
+        "name": "Secret",
+        "executableName": "secret",
         "icon": "assets/icon",
         "extraResource": [
           "assets"
@@ -101,7 +102,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "Electron Template"
+            "name": "Secret"
           }
         },
         {
