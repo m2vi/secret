@@ -8,6 +8,7 @@ export const Home: FC = () => {
 
   useEffect(() => {
     const cipher = crypt.encrypt('hallo');
+    console.log(cipher);
     const plain = crypt.decrypt(cipher);
 
     console.log(plain);

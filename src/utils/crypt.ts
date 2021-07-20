@@ -1,7 +1,10 @@
+import isJSON from '@stdlib/assert-is-json/';
 import CryptoJS from 'crypto-js';
 import { Cipher } from 'js-cipher';
 
-export enum CryptProps {}
+export enum cryptEnum {
+  shift = 23,
+}
 
 export class Crypt {
   cipher: Cipher;
@@ -20,8 +23,9 @@ export class Crypt {
 
   private AES_DECRYPT(hash: string) {
     const wordArray = CryptoJS.AES.decrypt(hash, this.secret);
-
-    return wordArray.toString(CryptoJS.enc.Utf8);
+    const plain = wordArray.toString(CryptoJS.enc.Utf8);
+    if (isJSON(plain)) return JSON.parse(plain).str;
+    return plain;
   }
 
   private CAESAR_ENCRYPT(message: string) {
@@ -43,8 +47,9 @@ export class Crypt {
     const caesarPlain = this.CAESAR_DECRYPT(hash);
     const aesPlain = this.AES_DECRYPT(caesarPlain);
 
-    const { str } = JSON.parse(aesPlain);
-    return str;
+    // const { str } = JSON.parse(aesPlain);
+    // return str;
+    return aesPlain;
   }
 }
 
